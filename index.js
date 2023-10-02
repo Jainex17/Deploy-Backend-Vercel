@@ -3,7 +3,11 @@ const app = express();
 const port = 5000;
 const cors = require('cors');
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://deploy-vercel-inky.vercel.app/',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
