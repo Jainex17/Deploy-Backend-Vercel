@@ -1,1 +1,1 @@
-learning to upload backned server in vercel
+learning to deploy node backned server in vercel
