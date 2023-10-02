@@ -7,7 +7,7 @@ const dbConnect = require('./db_connect/database');
 
 dotenv.config();
 app.use(cors({
-    origin: 'https://deploy-vercel-inky.vercel.app/',
+    // origin: 'https://deploy-vercel-inky.vercel.app/',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
