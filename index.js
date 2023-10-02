@@ -11,6 +11,8 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const userRoute = require('./routes/userRoute');
+app.use('/api/v1', userRoute);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
