@@ -2,8 +2,8 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const cors = require('cors');
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const dbConnect = require('./db_connect/database');
 
 dotenv.config();
 app.use(cors({
@@ -13,21 +13,6 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const dbConnect = async () => {
-    try {
-        await mongoose.connect(process.env.MONGODB_URL, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        })
-        .then((data)=>{
-            console.log(`Mongodb connected with server: ${data.connection.host}`);
-        })
-    } catch (error) {
-        console.log(error.message);
-        process.exit(1);
-    }
-}
 
 dbConnect();
 
